@@ -1,0 +1,51 @@
+#######	Admin Panel	######
+add -n Milk -c 20 litr -sp 7000 -bp 5000
+add -n Candy -c 100 peice -sp 2000 -bp 1000
+add -n Meat -c 8 kg -sp 50000 -bp 30000
+add -n Checken -c 15 kg -sp 30000 -bp 20000
+add -n Yougert -c 50 kg -sp 1000 -bp 500
+add -n Soup -c 10 peice -sp 7000 -bp 3500
+add -n Chips -c 30 packet -sp 10000 -bp 7000
+add -n Cheese -c 11 bar -sp 6000 -bp 2000
+-----------------------------------------
+#######	Customer Panel	######
+Login part :
+1- Sign in
+2- Sign up
+2
+Username : 9910
+Password : 1111
+The User = 9910 registerd successfully !
+Login part :
+1- Sign in
+2- Sign up
+1
+Username : 9910
+Password : 1112
+Wrong Password please try agine...
+Username : 9910
+Password : 1111
+Username and Password Mached !
+-----------------------------------------
++-----------------+---------+------------+------------+
+| Good name       | GoodID  | Inventory  | Price(IRR) |
++-----------------+---------+------------+------------+
+| Milk            | 101756  | 15 litr    | 7000       |
+| Candy           | 125102  | 50 peice   | 2000       |
+| Meat            | 166541  | 8 kg       | 50000      |
+| Checken         | 177001  | 15 kg      | 30000      |
+| Yougert         | 179306  | 50 kg      | 1000       |
+| Soup            | 104739  | 10 peice   | 7000       |
+| Chips           | 126289  | 30 packet  | 10000      |
++-----------------+---------+------------+------------+
+--------------------------------------------------------
+order 101756 -c 1 litr
+order 125102 -c 1 peice
+order 166541 -c 1 kg
+order 177001 -c 1 kg
+order 179306 -c 1 kg
+order 104739 -c 1 peice
+order 126289 -c 1 packet
+
+
+

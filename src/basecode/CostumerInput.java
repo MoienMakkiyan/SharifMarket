@@ -1,3 +1,5 @@
+package basecode;
+
 import java.util.Scanner;
 
 public class CostumerInput {
@@ -37,7 +39,7 @@ public class CostumerInput {
                         System.out.print("Password : ");
                         String aa2=scanner.nextLine();
                         costumerMannager.SignUp(aa1,aa2);
-                        System.out.println("The User = "+aa1+" registerd successfully !");
+                        System.out.println("The basecode.User = "+aa1+" registerd successfully !");
                         break;
                     }
                 }

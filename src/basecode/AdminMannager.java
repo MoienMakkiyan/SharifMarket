@@ -1,3 +1,5 @@
+package basecode;
+
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -21,7 +23,7 @@ public class AdminMannager {
 
     public void PrintOrderList(){
         System.out.println("+---------+-----------------+---------+------------+------------+---------------------+-------------------+");
-        System.out.println("| OrderID | Good name       | GoodID  | Inventory  | CostumerID | Registration time   | Processing status |");
+        System.out.println("| OrderID | basecode.Good name       | GoodID  | Inventory  | CostumerID | Registration time   | Processing status |");
         System.out.println("+---------+-----------------+---------+------------+------------+---------------------+-------------------+");
         for (int i=0;i<orders.size();i++){
             System.out.print("| ");
@@ -66,7 +68,7 @@ public class AdminMannager {
 
     public void PrintUnProcessedOrderList(){
         System.out.println("+---------+-----------------+---------+------------+------------+---------------------+");
-        System.out.println("| OrderID | Good name       | GoodID  | Inventory  | CostumerID | Registration time   |");
+        System.out.println("| OrderID | basecode.Good name       | GoodID  | Inventory  | CostumerID | Registration time   |");
         System.out.println("+---------+-----------------+---------+------------+------------+---------------------+");
         for (int i=0;i<orders.size();i++) {
             if (!orders.get(i).isDone()) {
@@ -142,7 +144,7 @@ public class AdminMannager {
                 goods.add(newGood);
                 System.out.println("add was successful -> good_id = "+newGood.getId());
             }
-            else System.out.println("Adding & Selling this Good has no profit so we don't need it :)");
+            else System.out.println("Adding & Selling this basecode.Good has no profit so we don't need it :)");
         }
         else System.out.println("There is "+Name+" at the Market and its ID is "+goods.get(i).getId()+" !");
     }
@@ -164,9 +166,9 @@ public class AdminMannager {
        }
        if (found) {
            goods.remove(i);
-           System.out.println("That Good removed successfully!");
+           System.out.println("That basecode.Good removed successfully!");
        }
-       else System.out.println("There is no Good with this ID !");
+       else System.out.println("There is no basecode.Good with this ID !");
     }
 
     public void AllProfit(){
@@ -191,7 +193,7 @@ public class AdminMannager {
         int AllProfit=0;
         int AllSell=0;
         System.out.println("+------------------+-----------------+---------+---------------+--------------+-------------+");
-        System.out.println("| Number of Orders | Good name       | GoodID  | Sales number  | Selling(IRR) | Profit(IRR) |");
+        System.out.println("| Number of Orders | basecode.Good name       | GoodID  | Sales number  | Selling(IRR) | Profit(IRR) |");
         System.out.println("+------------------+-----------------+---------+---------------+--------------+-------------+");
         for (int i=0;i<goods.size();i++){
             int OrderNum=0;
@@ -279,14 +281,14 @@ public class AdminMannager {
             else found=false;
         }
         if (found){
-            System.out.print("Good ID = "+ID+" :");
+            System.out.print("basecode.Good ID = "+ID+" :");
             System.out.print(goods.get(i).getName()+" "+goods.get(i).getCurrent_inventory()+" "+goods.get(i).getMDFR()+" ~> ");
             goods.get(i).setName(NewName);
             goods.get(i).setCurrent_inventory(NewCount);
             goods.get(i).setMDFR(MDFR);
             System.out.print(goods.get(i).getName()+" "+goods.get(i).getCurrent_inventory()+" "+goods.get(i).getMDFR());
         }
-        else System.out.println("There is no Good with this ID !");
+        else System.out.println("There is no basecode.Good with this ID !");
     }
 
     public void EditNameGood(int ID, String NewName){
@@ -300,12 +302,12 @@ public class AdminMannager {
             else found=false;
         }
         if (found){
-            System.out.print("Good ID = "+ID+" :");
+            System.out.print("basecode.Good ID = "+ID+" :");
             System.out.print(goods.get(i).getName()+" ~> ");
             goods.get(i).setName(NewName);
             System.out.print(goods.get(i).getName());
         }
-        else System.out.println("There is no Good with this ID !");
+        else System.out.println("There is no basecode.Good with this ID !");
     }
 
     public void EditSellPriceCountGood(int ID, int NewSellPrice, int NewBuyPrice, int NewCount, String MDFR){
@@ -321,7 +323,7 @@ public class AdminMannager {
         boolean profit = NewSellPrice > NewBuyPrice;
         if (found){
             if (profit){
-                System.out.print("Good ID = "+ID+" :");
+                System.out.print("basecode.Good ID = "+ID+" :");
                 System.out.print(goods.get(i).getName()+" "+goods.get(i).getCurrent_inventory()+" "+goods.get(i).getMDFR()+" Buy Price : "+goods.get(i).getBuying_price()+" Sell Price : "+goods.get(i).getSelling_price()+" ~> ");
                 goods.get(i).setBuying_price(NewBuyPrice);
                 goods.get(i).setSelling_price(NewSellPrice);
@@ -329,9 +331,9 @@ public class AdminMannager {
                 goods.get(i).setMDFR(MDFR);
                 System.out.print(goods.get(i).getName()+" "+goods.get(i).getCurrent_inventory()+" "+goods.get(i).getMDFR()+" Buy Price : "+goods.get(i).getBuying_price()+" Sell Price : "+goods.get(i).getSelling_price());
             }
-            else System.out.println("Adding & Selling this Good has no profit so we don't need it :)");
+            else System.out.println("Adding & Selling this basecode.Good has no profit so we don't need it :)");
         }
-        else System.out.println("There is no Good with this ID !");
+        else System.out.println("There is no basecode.Good with this ID !");
     }
 
     public void Save(){

@@ -1,3 +1,5 @@
+package basecode;
+
 import java.lang.ref.PhantomReference;
 
 public class Good {

@@ -1,3 +1,5 @@
+package basecode;
+
 import java.util.Scanner;
 
 public class AdminInput {

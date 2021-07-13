@@ -15,7 +15,7 @@ Login part :
 2
 Username : 9910
 Password : 1111
-The User = 9910 registerd successfully !
+The basecode.User = 9910 registerd successfully !
 Login part :
 1- Sign in
 2- Sign up
@@ -28,7 +28,7 @@ Password : 1111
 Username and Password Mached !
 -----------------------------------------
 +-----------------+---------+------------+------------+
-| Good name       | GoodID  | Inventory  | Price(IRR) |
+| basecode.Good name       | GoodID  | Inventory  | Price(IRR) |
 +-----------------+---------+------------+------------+
 | Milk            | 101756  | 15 litr    | 7000       |
 | Candy           | 125102  | 50 peice   | 2000       |

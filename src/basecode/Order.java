@@ -1,3 +1,5 @@
+package basecode;
+
 public class Order {
     private int costumerID;
     private int orderID;

@@ -1,3 +1,5 @@
+package basecode;
+
 import java.util.ArrayList;
 
 public class SharedLibrary {
@@ -43,7 +45,7 @@ public class SharedLibrary {
 
     public void Print_Available_goods(ArrayList<Good> goods){
         System.out.println("+-----------------+---------+------------+------------+");
-        System.out.println("| Good name       | GoodID  | Inventory  | Price(IRR) |");
+        System.out.println("| basecode.Good name       | GoodID  | Inventory  | Price(IRR) |");
         System.out.println("+-----------------+---------+------------+------------+");
         for (int i=0;i<goods.size();i++) {
             if (goods.get(i).getCurrent_inventory()>0) {
@@ -82,7 +84,7 @@ public class SharedLibrary {
 
     public void Print_Unavailable_goods(ArrayList<Good> goods){
         System.out.println("+-----------------+---------+------------+------------+");
-        System.out.println("| Good name       | GoodID  | Inventory  | Price(IRR) |");
+        System.out.println("| basecode.Good name       | GoodID  | Inventory  | Price(IRR) |");
         System.out.println("+-----------------+---------+------------+------------+");
         for (int i=0;i<goods.size();i++) {
             if (goods.get(i).getCurrent_inventory()==0) {

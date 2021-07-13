@@ -1,3 +1,5 @@
+package basecode;
+
 import java.util.ArrayList;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -60,7 +62,7 @@ public class ReadWriteFile {
             Scanner myReader = new Scanner(myObj);
             while (myReader.hasNextLine()) {
                 String[] data = myReader.nextLine().split("\\s");
-                User addUser = new User(data[0],data[1]);
+                User addUser = new User(data[0],data[1],Integer.parseInt(data[2]));
                 users.add(addUser);
             }
             myReader.close();
@@ -142,6 +144,8 @@ public class ReadWriteFile {
                 myWriter.write(users.get(i).getId());
                 myWriter.write(" ");
                 myWriter.write(users.get(i).getPassword());
+                myWriter.write(" ");
+                myWriter.write(String.valueOf(users.get(i).getMoney()));
                 myWriter.write("\n");
             }
             myWriter.close();
@@ -196,6 +200,33 @@ public class ReadWriteFile {
         } catch (IOException e) {
             System.out.println("IDK An error occurred.");
             e.printStackTrace();
+        }
+    }
+
+    public int current_user(){
+        int a = 0;
+        try {
+            File myObj = new File("current_user.txt");
+            Scanner myReader = new Scanner(myObj);
+            a = Integer.parseInt(myReader.nextLine());
+            myReader.close();
+        } catch (FileNotFoundException e) {
+            System.out.println("An error occurred:(");
+            //e.printStackTrace();
+            CreateUsersFile();
+        }
+        return a;
+    }
+
+    public void set_user (int a){
+
+        try {
+            FileWriter myWriter = new FileWriter("current_user.txt");
+            myWriter.write(String.valueOf(a));
+            myWriter.close();
+        } catch (IOException e) {
+            System.out.println("An error occurred:(");
+            //e.printStackTrace();
         }
     }
 }

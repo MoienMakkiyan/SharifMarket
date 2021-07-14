@@ -439,7 +439,6 @@ public class AdminMannager {
                 }
             }
             goods.get(i).setSellNum(SellNum);
-            System.out.println(SellNum);
         }
     }
 

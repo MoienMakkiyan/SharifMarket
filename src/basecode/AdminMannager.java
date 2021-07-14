@@ -390,6 +390,59 @@ public class AdminMannager {
         this.orders = orders;
     }
 
+    public int AllSell(){
+        //int AllOrder=0;
+        //int AllProfit=0;
+        int AllSell=0;
+        for (int i=0;i<goods.size();i++){
+            int OrderNum=0;
+            int SellNum=0;
+            for (int j=0;j<orders.size();j++){
+                if (orders.get(j).getGoodID()==goods.get(i).getId()){
+                    OrderNum++;
+                    SellNum+=orders.get(j).getInventory();
+                }
+            }
+            //AllOrder+=OrderNum;
+            AllSell+=goods.get(i).getSellingUntilNow();
+            //AllProfit+=goods.get(i).getSellingUntilNow()-goods.get(i).getBuyingUntilNow();
+        }
+        return AllSell;
+    }
+
+    public int AllOrder(){
+        int AllOrder=0;
+        //int AllProfit=0;
+        //int AllSell=0;
+        for (int i=0;i<goods.size();i++){
+            int OrderNum=0;
+            int SellNum=0;
+            for (int j=0;j<orders.size();j++){
+                if (orders.get(j).getGoodID()==goods.get(i).getId()){
+                    OrderNum++;
+                    SellNum+=orders.get(j).getInventory();
+                }
+            }
+            AllOrder+=OrderNum;
+            //AllSell+=goods.get(i).getSellingUntilNow();
+            //AllProfit+=goods.get(i).getSellingUntilNow()-goods.get(i).getBuyingUntilNow();
+        }
+        return AllOrder;
+    }
+
+    public void SetSellNum(){
+        for (int i=0;i<goods.size();i++){
+            int SellNum=0;
+            for (int j=0;j<orders.size();j++){
+                if (orders.get(j).getGoodID()==goods.get(i).getId()){
+                    SellNum+=orders.get(j).getInventory();
+                }
+            }
+            goods.get(i).setSellNum(SellNum);
+            System.out.println(SellNum);
+        }
+    }
+
     public static AdminMannager getInstance(){
         if (instance == null)
             instance = new AdminMannager();

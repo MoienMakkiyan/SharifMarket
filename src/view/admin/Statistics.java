@@ -21,11 +21,19 @@ public class Statistics {
     @FXML
     Label AllProfit;
     @FXML
+    Label AllSell;
+    @FXML
+    Label AllOrder;
+    @FXML
     TextField GoodProfit;
 
     public void initialize(){
 
-        AllProfit.setText("All Profit Until Now :"+AdminMannager.getInstance().AllProfit()+" IRR");
+        AllProfit.setText("All Profit Until Now : "+AdminMannager.getInstance().AllProfit()+" IRR");
+        AllSell.setText("All Sells Until Now : "+AdminMannager.getInstance().AllSell()+" IRR");
+        AllOrder.setText("All Orders Until Now : "+AdminMannager.getInstance().AllOrder()+" order");
+        AdminMannager.getInstance().SetSellNum();
+
 
         for (Good good : AdminMannager.getInstance().getGoods())
             good.setProfit();
@@ -33,15 +41,15 @@ public class Statistics {
         table = new TableView();
 
         TableColumn<Good, String> column1 = new TableColumn<>("Name");
-        column1.setMinWidth(100);
+        column1.setMinWidth(80);
         column1.setCellValueFactory(new PropertyValueFactory<>("name"));
 
         TableColumn<Good, String> column2 = new TableColumn<>("ID");
-        column2.setMinWidth(60);
+        column2.setMinWidth(50);
         column2.setCellValueFactory(new PropertyValueFactory<>("id"));
 
         TableColumn<Good, String> column3 = new TableColumn<>("Inventory");
-        column3.setMinWidth(80);
+        column3.setMinWidth(70);
         column3.setCellValueFactory(new PropertyValueFactory<>("current_inventory"));
 
         TableColumn<Good, String> column4 = new TableColumn<>("Buying Price");
@@ -61,15 +69,19 @@ public class Statistics {
         column7.setCellValueFactory(new PropertyValueFactory<>("buyingUntilNow"));
 
         TableColumn<Good, String> column8 = new TableColumn<>("Profit");
-        column8.setMinWidth(80);
+        column8.setMinWidth(60);
         column8.setCellValueFactory(new PropertyValueFactory<>("profit"));
+
+        TableColumn<Good, String> column9 = new TableColumn<>("Sell NO.");
+        column9.setMinWidth(60);
+        column9.setCellValueFactory(new PropertyValueFactory<>("SellNum"));
 
 
         table.setItems(getAllProducts());
-        table.getColumns().addAll(column1, column2, column3, column4, column5, column6, column7, column8);
+        table.getColumns().addAll(column1, column2, column3, column4, column5, column6, column7, column8, column9);
         table.setOpacity(1);
         table.setMaxHeight(325);
-        table.setMinHeight(460);
+        table.setMinHeight(380);
         table.setTranslateX(132);
         table.setTranslateY(0);
         anchorPane.getChildren().add(table);

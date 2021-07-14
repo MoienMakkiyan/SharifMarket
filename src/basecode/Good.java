@@ -102,4 +102,14 @@ public class Good {
     public void setProfit() {
         this.profit = sellingUntilNow-buyingUntilNow;
     }
+
+    private int SellNum = 0;
+
+    public void setSellNum(int sellNum) {
+        SellNum = sellNum;
+    }
+
+    public int getSellNum() {
+        return SellNum;
+    }
 }

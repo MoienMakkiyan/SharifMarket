@@ -87,7 +87,7 @@ public class availabe_goods {
         aLert.setHeaderText("You're about to exit the program");
         aLert.setContentText("Are you sure?");
         aLert.getButtonTypes().addAll(ButtonType.YES, ButtonType.NO);
-
+        CostumerMannager.getInstance().Save();
         if(aLert.showAndWait().get() == ButtonType.YES) {
             System.exit(1);
         }
@@ -112,7 +112,7 @@ public class availabe_goods {
                 if(CostumerMannager.getInstance().AddOrder(CostumerMannager.getInstance().getID(),productSelected.getId(),Integer.parseInt(txtInventory.getText()))){
                     response.setText("Registered");
                     CostumerMannager.getInstance().Save();
-                    table.setItems(getAvailableProducts());
+                    //table.setItems(getAvailableProducts());
                     table.refresh();
                 }
 

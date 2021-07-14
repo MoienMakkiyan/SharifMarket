@@ -10,6 +10,7 @@ public class Good {
     private int id;
     private int sellingUntilNow=0;
     private int buyingUntilNow=0;
+    private int profit;
     private String MDFR;
 
     public Good(String name, int current_inventory, String MDFR, int selling_price, int buying_price, int id) {
@@ -92,5 +93,13 @@ public class Good {
 
     public void setMDFR(String MDFR) {
         this.MDFR = MDFR;
+    }
+
+    public int getProfit() {
+        return profit;
+    }
+
+    public void setProfit() {
+        this.profit = sellingUntilNow-buyingUntilNow;
     }
 }

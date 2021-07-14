@@ -35,7 +35,7 @@
                   <Button mnemonicParsing="false" onAction="#Login" prefHeight="26.0" prefWidth="53.0" text="Login" />
                </children>
             </VBox>
-            <Label fx:id="errorr_box" alignment="CENTER" layoutY="510.0" prefHeight="54.0" prefWidth="800.0" textFill="RED">
+            <Label fx:id="error_box" alignment="CENTER" layoutY="510.0" prefHeight="54.0" prefWidth="800.0" textFill="RED">
                <font>
                   <Font size="24.0" />
                </font></Label>

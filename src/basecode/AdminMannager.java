@@ -4,6 +4,12 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class AdminMannager {
+
+    private static AdminMannager instance = null;
+
+    private AdminMannager(){
+    }
+
     SharedLibrary sharedLibrary =new SharedLibrary();
     ReadWriteFile readWriteFile =new ReadWriteFile();
     private ArrayList<Good> goods=new ArrayList<>();
@@ -171,12 +177,13 @@ public class AdminMannager {
        else System.out.println("There is no basecode.Good with this ID !");
     }
 
-    public void AllProfit(){
+    public int AllProfit(){
         int profit=0;
         for (int i=0;i<goods.size();i++){
             profit+=(goods.get(i).getSelling_price()-goods.get(i).getBuying_price());
         }
         System.out.println(profit+" IRR");
+        return profit;
     }
 
     public void GoodProfit(int ID){
@@ -342,7 +349,50 @@ public class AdminMannager {
     }
 
     public void Load(){
+        System.out.println("Data Read !");
         goods=readWriteFile.ReadGoods();
         orders=readWriteFile.ReadOrders();
+    }
+
+    public static void setInstance(AdminMannager instance) {
+        AdminMannager.instance = instance;
+    }
+
+    public SharedLibrary getSharedLibrary() {
+        return sharedLibrary;
+    }
+
+    public void setSharedLibrary(SharedLibrary sharedLibrary) {
+        this.sharedLibrary = sharedLibrary;
+    }
+
+    public ReadWriteFile getReadWriteFile() {
+        return readWriteFile;
+    }
+
+    public void setReadWriteFile(ReadWriteFile readWriteFile) {
+        this.readWriteFile = readWriteFile;
+    }
+
+    public ArrayList<Good> getGoods() {
+        return goods;
+    }
+
+    public void setGoods(ArrayList<Good> goods) {
+        this.goods = goods;
+    }
+
+    public ArrayList<Order> getOrders() {
+        return orders;
+    }
+
+    public void setOrders(ArrayList<Order> orders) {
+        this.orders = orders;
+    }
+
+    public static AdminMannager getInstance(){
+        if (instance == null)
+            instance = new AdminMannager();
+        return instance;
     }
 }

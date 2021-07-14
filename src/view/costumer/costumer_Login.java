@@ -40,7 +40,7 @@ public class costumer_Login {
         aLert.setHeaderText("You're about to exit the program");
         aLert.setContentText("Are you sure?");
         aLert.getButtonTypes().addAll(ButtonType.YES, ButtonType.NO);
-
+        CostumerMannager.getInstance().Save();
         if(aLert.showAndWait().get() == ButtonType.YES) {
             System.exit(1);
         }

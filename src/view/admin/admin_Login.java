@@ -1,19 +1,18 @@
 package view.admin;
 
+import basecode.AdminMannager;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.PasswordField;
 import view.Main_Admin;
 
-import java.awt.*;
+import javafx.scene.control.Label;
 import java.io.IOException;
 
 public class admin_Login {
     @FXML
     Label error_box;
-    @FXML
-    Label error1_box;
     @FXML
     PasswordField passwordField;
 
@@ -27,7 +26,7 @@ public class admin_Login {
         error_box.setText("");
         if (passwordField.getText().isEmpty()) error_box.setText("Please Enter the Password.");
         else {
-            if (passwordField.getText().equalsIgnoreCase("I Love OOP")){
+            if ((passwordField.getText().equalsIgnoreCase("I Love OOP"))){
                 main_admin.changeScene("admin/admin_Enter.fxml");
             }
             else error_box.setText("Invalid Password, Please try again...");
@@ -40,7 +39,7 @@ public class admin_Login {
         aLert.setHeaderText("You're about to exit the program");
         aLert.setContentText("Are you sure?");
         aLert.getButtonTypes().addAll(ButtonType.YES, ButtonType.NO);
-
+        AdminMannager.getInstance().Save();
         if(aLert.showAndWait().get() == ButtonType.YES) {
             System.exit(1);
         }

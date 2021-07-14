@@ -1,5 +1,6 @@
 package view;
 
+import basecode.CostumerMannager;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -47,7 +48,7 @@ public class Main_Costumer extends Application {
         aLert.setHeaderText("You're about to exit the program");
         aLert.setContentText("Are you sure?");
         aLert.getButtonTypes().addAll(ButtonType.YES, ButtonType.NO);
-
+        CostumerMannager.getInstance().Save();
         if(aLert.showAndWait().get() == ButtonType.YES) {
             System.exit(1);
         }

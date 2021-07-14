@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.admin.admin_Enter">
+    <center>
+        <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <children>
+                <VBox prefHeight="600.0" prefWidth="127.0">
+                    <children>
+                        <Button mnemonicParsing="false" onAction="#All_Goods" prefHeight="99.0" prefWidth="126.0" text="All Goods" />
+                        <Button mnemonicParsing="false" onAction="#Available_Goods" prefHeight="99.0" prefWidth="126.0" text="Available Goods" />
+                        <Button mnemonicParsing="false" onAction="#Unavailable_Goods" prefHeight="101.0" prefWidth="127.0" text="Unavailable Goods" />
+                        <Button mnemonicParsing="false" onAction="#Order_History" prefHeight="99.0" prefWidth="126.0" text="Order History" />
+                        <Button mnemonicParsing="false" onAction="#Statistics" prefHeight="99.0" prefWidth="126.0" text="Statistics" />
+                        <Button mnemonicParsing="false" onAction="#LogOut" prefHeight="99.0" prefWidth="126.0" text="Log Out" />
+                        <Button mnemonicParsing="false" onAction="#force_Exit" prefHeight="99.0" prefWidth="126.0" text="Exit" />
+                    </children>
+                </VBox>
+                <Label layoutX="187.0" layoutY="449.0" text="Please Click a Button">
+                    <font>
+                        <Font name="System Bold Italic" size="56.0" />
+                    </font>
+                </Label>
+                <ImageView fitHeight="380.0" fitWidth="405.0" layoutX="274.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../images/click.png" />
+                    </image>
+                </ImageView>
+            </children>
+        </AnchorPane>
+    </center>
+</BorderPane>

@@ -1,32 +1,27 @@
-package view.costumer;
+package view.admin;
 
+import basecode.AdminMannager;
 import basecode.CostumerMannager;
 import basecode.Good;
 import javafx.collections.FXCollections;
 import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
+import view.Main_Admin;
 import view.Main_Costumer;
 
 import java.io.IOException;
 
-public class all_goods {
+public class Available_Goods {
     private TableView table;
-    Main_Costumer main_costumer = new Main_Costumer();
-    @FXML
-    private Label IDshow;
-    @FXML
-    private Label Moneyshow;
+    Main_Admin main_admin = new Main_Admin();
     @FXML
     AnchorPane anchorPane;
 
     public void initialize(){
-        IDshow.setText(String.valueOf(CostumerMannager.getInstance().getID()));
-        Moneyshow.setText(String.valueOf(CostumerMannager.getInstance().getUsers().get(CostumerMannager.getInstance().back_index_of_user(CostumerMannager.getInstance().getID())).getMoney()));
 
         table = new TableView();
 
@@ -35,9 +30,8 @@ public class all_goods {
         column1.setCellValueFactory(new PropertyValueFactory<>("name"));
 
         TableColumn<Good, String> column2 = new TableColumn<>("ID");
-        column2.setMinWidth(150);
+        column2.setMinWidth(130);
         column2.setCellValueFactory(new PropertyValueFactory<>("id"));
-
 
         TableColumn<Good, String> column3 = new TableColumn<>("Inventory");
         column3.setMinWidth(150);
@@ -48,48 +42,64 @@ public class all_goods {
         column4.setCellValueFactory(new PropertyValueFactory<>("selling_price"));
 
         TableColumn<Good, String> column5 = new TableColumn<>("Unit");
-        column5.setMinWidth(45);
+        column5.setMinWidth(50);
         column5.setCellValueFactory(new PropertyValueFactory<>("MDFR"));
 
-        table.setItems(getAllProducts());
+        table.setItems(getAvailableProducts());
         table.getColumns().addAll(column1, column2, column3, column4, column5);
         table.setOpacity(1);
         table.setMaxHeight(325);
-        table.setMinHeight(600);
-        table.setTranslateX(155);
+        table.setMinHeight(550);
+        table.setTranslateX(132);
         table.setTranslateY(0);
         anchorPane.getChildren().add(table);
 
         TableView.TableViewSelectionModel selectionModel = table.getSelectionModel();
         ObservableList<Good> productsSelected = selectionModel.getSelectedItems();
+        productsSelected.addListener(new ListChangeListener<Good>() {
+            @Override
+            public void onChanged(Change<? extends Good> c) {
+                //response.setText(productsSelected.get(0).getName());
+            }
+        });
+    }
 
+    private ObservableList<Good> getAvailableProducts() {
+        ObservableList<Good> productsList = FXCollections.observableArrayList();
+        for (Good product : AdminMannager.getInstance().getGoods())
+            if(product.getCurrent_inventory()>0) productsList.add(product);
+        return productsList;
+    }
+
+    public void All_Goods() throws IOException {
+        main_admin.changeScene("admin/All_Goods.fxml");
+    }
+
+    public void Unavailable_Goods() throws IOException {
+        main_admin.changeScene("admin/Unavailable_Goods.fxml");
+    }
+
+    public void Order_History() throws IOException {
+        main_admin.changeScene("admin/Order_History.fxml");
+    }
+
+    public void Statistics() throws IOException {
+        main_admin.changeScene("admin/Statistics.fxml");
     }
 
     public void LogOut() throws IOException {
-        main_costumer.changeScene("costumer/costumer_Login.fxml");
+        main_admin.changeScene("admin/admin_Login.fxml");
     }
+
     public void force_Exit(){
         Alert aLert = new Alert(Alert.AlertType.NONE);
         aLert.setTitle("Exit");
         aLert.setHeaderText("You're about to exit the program");
         aLert.setContentText("Are you sure?");
         aLert.getButtonTypes().addAll(ButtonType.YES, ButtonType.NO);
-        CostumerMannager.getInstance().Save();
+        AdminMannager.getInstance().Save();
         if(aLert.showAndWait().get() == ButtonType.YES) {
             System.exit(1);
         }
-    }
-    public void available_goods() throws IOException {
-        main_costumer.changeScene("costumer/availabe_goods.fxml");
-    }
-    public void unavailable_goods() throws IOException {
-        main_costumer.changeScene("costumer/unavailabe_goods.fxml");
-    }
-
-    private ObservableList<Good> getAllProducts() {
-        ObservableList<Good> productsList = FXCollections.observableArrayList();
-        for (Good product : CostumerMannager.getInstance().getGoods())
-            productsList.add(product);
-        return productsList;
     }
 }

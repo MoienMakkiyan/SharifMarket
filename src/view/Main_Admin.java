@@ -1,5 +1,7 @@
 package view;
 
+import basecode.AdminMannager;
+import basecode.CostumerMannager;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -44,7 +46,7 @@ public class Main_Admin extends Application {
         aLert.setHeaderText("You're about to exit the program");
         aLert.setContentText("Are you sure?");
         aLert.getButtonTypes().addAll(ButtonType.YES, ButtonType.NO);
-
+        AdminMannager.getInstance().Save();
         if(aLert.showAndWait().get() == ButtonType.YES) {
             System.exit(1);
         }

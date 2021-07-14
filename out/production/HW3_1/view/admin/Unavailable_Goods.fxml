@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.admin.Unavailable_Goods">
+    <center>
+        <AnchorPane fx:id="anchorPane" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <children>
+                <VBox prefHeight="600.0" prefWidth="127.0">
+                    <children>
+                        <Button mnemonicParsing="false" onAction="#All_Goods" prefHeight="99.0" prefWidth="126.0" text="All Goods" />
+                        <Button mnemonicParsing="false" onAction="#Available_Goods" prefHeight="99.0" prefWidth="126.0" text="Available Goods" />
+                        <Button cancelButton="true" defaultButton="true" mnemonicParsing="false" prefHeight="101.0" prefWidth="127.0" text="Unavailable Goods" />
+                        <Button mnemonicParsing="false" onAction="#Order_History" prefHeight="99.0" prefWidth="126.0" text="Order History" />
+                        <Button mnemonicParsing="false" onAction="#Statistics" prefHeight="99.0" prefWidth="126.0" text="Statistics" />
+                        <Button mnemonicParsing="false" onAction="#LogOut" prefHeight="99.0" prefWidth="126.0" text="Log Out" />
+                        <Button mnemonicParsing="false" onAction="#force_Exit" prefHeight="99.0" prefWidth="126.0" text="Exit" />
+                    </children>
+                </VBox>
+                <Label layoutX="138.0" layoutY="552.0" text="To Change Anything Please Enter All Goods Section" textFill="RED">
+                    <font>
+                        <Font name="System Bold Italic" size="27.0" />
+                    </font>
+                </Label>
+            </children>
+        </AnchorPane>
+    </center>
+</BorderPane>

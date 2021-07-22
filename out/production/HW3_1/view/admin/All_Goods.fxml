@@ -53,10 +53,11 @@
                   </TextField>
                </children>
             </HBox>
-            <VBox layoutX="735.0" layoutY="516.0" prefHeight="51.0" prefWidth="66.0">
+            <VBox layoutX="735.0" layoutY="499.0" onDragDetected="#Add" prefHeight="79.0" prefWidth="66.0">
                <children>
                   <Button mnemonicParsing="false" onAction="#Edit" prefHeight="26.0" prefWidth="68.0" text="Edit" />
                   <Button mnemonicParsing="false" onAction="#Delete" prefHeight="26.0" prefWidth="69.0" text="Delete" />
+                  <Button mnemonicParsing="false" onAction="#Add" prefHeight="26.0" prefWidth="69.0" text="Add" />
                </children>
             </VBox>
             <Label layoutX="164.0" layoutY="501.0" text="Good's Name">

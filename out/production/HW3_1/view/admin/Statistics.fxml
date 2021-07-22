@@ -23,12 +23,22 @@
                         <Button mnemonicParsing="false" onAction="#force_Exit" prefHeight="99.0" prefWidth="126.0" text="Exit" />
                     </children>
                 </VBox>
-            <TextField fx:id="GoodProfit" alignment="CENTER" layoutX="132.0" layoutY="479.0" prefHeight="54.0" prefWidth="660.0" promptText="Please Choose a Good">
+            <TextField fx:id="GoodProfit" alignment="CENTER" layoutX="132.0" layoutY="391.0" prefHeight="54.0" prefWidth="660.0" promptText="Please Choose a Good">
                <font>
                   <Font size="24.0" />
                </font>
             </TextField>
-            <Label fx:id="AllProfit" layoutX="132.0" layoutY="542.0" prefHeight="47.0" prefWidth="660.0" text="All Profit Until Now :" textFill="RED">
+            <Label fx:id="AllProfit" layoutX="132.0" layoutY="446.0" prefHeight="47.0" prefWidth="660.0" text="All Profit Until Now :" textFill="RED">
+               <font>
+                  <Font name="System Bold Italic" size="32.0" />
+               </font>
+            </Label>
+            <Label fx:id="AllSell" layoutX="132.0" layoutY="493.0" prefHeight="47.0" prefWidth="660.0" text="All Sells Until Now :" textFill="#3f00ff">
+               <font>
+                  <Font name="System Bold Italic" size="32.0" />
+               </font>
+            </Label>
+            <Label fx:id="AllOrder" layoutX="132.0" layoutY="540.0" prefHeight="47.0" prefWidth="660.0" text="All Orders Until Now :" textFill="#00ff38">
                <font>
                   <Font name="System Bold Italic" size="32.0" />
                </font>

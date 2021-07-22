@@ -113,6 +113,11 @@ public class All_Goods {
         }
     }
 
+    public void Add(){
+        AdminMannager.getInstance().AddGoods(GoodName.getText(),Integer.parseInt(GoodInventory.getText()),"",Integer.parseInt(SellingPrice.getText()),Integer.parseInt(BuyingPrice.getText()));
+        table.refresh();
+    }
+
     public void Available_Goods() throws IOException {
         main_admin.changeScene("admin/Available_Goods.fxml");
     }
